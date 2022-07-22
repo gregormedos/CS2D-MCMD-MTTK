@@ -11,9 +11,9 @@ $ gfortran -O3 -o cs2d_npt_cutoff cs2d_npt_cutoff.f90
 
 Create folder with the temperature/pressure value for the name:
 
-$ mkdir 1.000
+$ mkdir <pressure with 3 decimal places> (examples: 0.001, 1.000, 12.345)
 
-Run Python script to start a batch of jobs for a series of densities/temperatures at the given temperature/pressure:
+Run Python script to start a batch of jobs for a series of densities/temperatures (again with 3 decimal places) at the given temperature/pressure:
 
 $ python3 cs2d_nvt_cutoff.py
 
