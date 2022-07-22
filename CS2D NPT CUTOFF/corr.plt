@@ -11,7 +11,7 @@ unset size
 
 load 'palette.pal'
 
-cd sprintf('%s\%.3f\%.3f', path, pres, temp)
+cd sprintf('%s/%.3f/%.3f', path, pres, temp)
 set terminal postscript eps enhanced color
 set size 0.5,0.5
 set xlabel 'r^*'

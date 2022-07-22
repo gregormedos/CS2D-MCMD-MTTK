@@ -9,7 +9,7 @@ set ytics auto                                                      # set ytics 
 unset key
 unset size
 
-cd sprintf('%s\%.3f\%.3f', path, pres, temp)
+cd sprintf('%s/%.3f/%.3f', path, pres, temp)
 set terminal postscript eps enhanced color
 set size 0.5,0.5
 set size square

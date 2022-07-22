@@ -23,12 +23,13 @@ print("-----------------------------------")
 print("--- PARAMETERS INITIALIZED --------")
 print("-----------------------------------")
 
-os.chdir(path + '\\' + '{:.3f}'.format(Pres))
+os.chdir(path + '/' + '{:.3f}'.format(Pres))
 for i in range(TempPoints) :
     Ran = randint(1, 32000)
     Temp = TempStart + i * TempStep
-    os.mkdir(path + '\\' + '{:.3f}'.format(Pres) + '\\' + '{:.3f}'.format(Temp))
-    os.chdir(path + '\\' + '{:.3f}'.format(Pres) + '\\' + '{:.3f}'.format(Temp))
+    os.mkdir(path + '/' + '{:.3f}'.format(Pres) + '/' + '{:.3f}'.format(Temp))
+    os.chdir(path + '/' + '{:.3f}'.format(Pres) + '/' + '{:.3f}'.format(Temp))
+    print(os.getcwd())
     with open(file='md_input', mode='w') as f :
         f.write("'ensemble parameters'\n")
         f.write("'number of particles (N)'                    100\n")
@@ -56,11 +57,11 @@ for i in range(TempPoints) :
         f.write("'correlation function parameters'\n")
         f.write("'g(r) radial interval'                       0.02d0\n")
         f.write("'cycles/steps per g(r) sampling'             10\n")
-    shutil.copy(path + '\\' + 'cs2d_npt_cutoff.exe', path + '\\' + '{:.3f}'.format(Pres) + '\\' + '{:.3f}'.format(Temp))
+    shutil.copy(path + '/' + 'cs2d_npt_cutoff', path + '/' + '{:.3f}'.format(Pres) + '/' + '{:.3f}'.format(Temp))
     print("-----------------------------------")
     print("--- CS2D_NPT_CUTOFF INITIALIZED ---")
     print("-----------------------------------")
-    Process = subprocess.Popen("cs2d_npt_cutoff.exe", shell=False)
+    Process = subprocess.Popen("./cs2d_npt_cutoff", shell=False)
     Process.wait()
     print("JOB FINISHED")
 
