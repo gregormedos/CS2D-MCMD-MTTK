@@ -1,4 +1,4 @@
-path='C:\Users\medos\simulacije\CS2DMD NVT CUTOFF izoterme'
+path=''
 N=100
 nseries=20
 
