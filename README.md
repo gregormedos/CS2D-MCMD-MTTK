@@ -20,3 +20,13 @@ $ python3 cs2d_nvt_cutoff.py
 or
 
 $ python3 cs2d_npt_cutoff.py
+
+For snapshots and graphs use the given Gnuplot script (modify the file for you're needs!):
+
+$ gnuplot mainscript.plt
+
+For thermodynamic data use the given Python script and then Gnuplot script (modify the file for you're needs!):
+
+$ python3 data.py; gnuplot grafi_izoterme.plt
+
+$ python3 data.py; gnuplot grafi_izobare.plt
