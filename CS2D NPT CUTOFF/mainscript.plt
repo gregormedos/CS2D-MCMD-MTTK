@@ -1,4 +1,4 @@
-path='C:\Users\medos\programiranje\urbic\programi\2022\CS2D NPT CUTOFF'
+path=''
 nseries=20
 
 pres_points=1
