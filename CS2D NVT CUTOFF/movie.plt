@@ -9,7 +9,7 @@ set ytics auto                                                      # set ytics 
 unset key
 unset size
 
-cd sprintf('%s\%.3f\%.3f', path, temp, dens)
+cd sprintf('%s/%.3f/%.3f', path, temp, dens)
 set size 1.0,1.0
 set size square
 unset xtics

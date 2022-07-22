@@ -23,12 +23,12 @@ print("-----------------------------------")
 print("--- PARAMETERS INITIALIZED --------")
 print("-----------------------------------")
 
-os.chdir(path + '\\' + '{:.3f}'.format(Temp))
+os.chdir(path + '/' + '{:.3f}'.format(Temp))
 for i in range(GostPoints) :
     Ran = randint(1, 32000)
     Gost = GostStart + i * GostStep
-    os.mkdir(path + '\\' + '{:.3f}'.format(Temp) + '\\' + '{:.3f}'.format(Gost))
-    os.chdir(path + '\\' + '{:.3f}'.format(Temp) + '\\' + '{:.3f}'.format(Gost))
+    os.mkdir(path + '/' + '{:.3f}'.format(Temp) + '/' + '{:.3f}'.format(Gost))
+    os.chdir(path + '/' + '{:.3f}'.format(Temp) + '/' + '{:.3f}'.format(Gost))
     with open(file='md_input', mode='w') as f :
         f.write("'ensemble parameters'\n")
         f.write("'number of particles (N)'                   100\n")
@@ -53,11 +53,11 @@ for i in range(GostPoints) :
         f.write("'g(r) radial interval'                      0.02d0\n")
         f.write("'cycles/steps per g(r) sampling'            10\n")
         f.write("'cycles/steps per msd(n)/msd(t) sampling'   10\n")
-    shutil.copy(path + '\\' + 'cs2d_nvt_cutoff.exe', path + '\\' + '{:.3f}'.format(Temp) + '\\' + '{:.3f}'.format(Gost))
+    shutil.copy(path + '/' + 'cs2d_nvt_cutoff.exe', path + '/' + '{:.3f}'.format(Temp) + '/' + '{:.3f}'.format(Gost))
     print("-----------------------------------")
     print("--- CS2D_NVT_CUTOFF INITIALIZED ---")
     print("-----------------------------------")
-    Process = subprocess.Popen("cs2d_nvt_cutoff.exe", shell=False)
+    Process = subprocess.Popen("./cs2d_nvt_cutoff.exe", shell=False)
     Process.wait()
     print("JOB FINISHED")
 
